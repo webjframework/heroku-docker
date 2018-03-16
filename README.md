@@ -1,4 +1,9 @@
-# heroku
+#GENERAL
+use this Git or fork it ...
+
+upload new war and restart dyno (not build)
+
+# HEROKU
 
 install heroku cli
 
