@@ -1,0 +1,19 @@
+#! /bin/bash
+DIRECTORY=$1
+echo $DIRECTORY
+echo $REMOTEGIT
+function block_for_change {
+  inotifywait -r \
+    -e modify,move,create,delete \
+    $DIRECTORY
+}
+function build {
+  cd $DIRECTORY
+  git add .
+  git commit -m "sync files"
+  git push webjframework master
+}
+build
+while block_for_change; do
+  build
+done
