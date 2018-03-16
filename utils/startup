@@ -1,0 +1,20 @@
+#!/bin/bash
+echo "WebJ Script Starts " 
+
+mkdir /target
+mkdir /target/tomcat.$PORT
+mkdir /target/tomcat.$PORT/webapps
+
+cp /usr/local/deployments/*.ini /target/tomcat.$PORT/webapps
+
+cd /
+git clone https://github.com/webjframework/webj.git
+
+java $JAVA_OPTS -jar /usr/local/deployments/webapp-runner.jar --port $PORT --expanded-dir-name WEBJ --expand-war /webj/WebJ.war
+
+#Dont put anything here ...(after deployment)
+#P=$PORT
+#sed "s/8080/$P/g" < /usr/local/tomcat/conf/server.xml > /tmp/srv.xml 
+#cp /usr/local/deployments/WebJ.war /usr/local/tomcat/webapps/
+#catalina.sh run -config /tmp/srv.xml
+
