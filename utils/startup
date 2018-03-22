@@ -10,6 +10,8 @@ cp /usr/local/deployments/*.ini /target/tomcat.$PORT/webapps
 cd /
 git clone https://github.com/webjframework/webj.git
 
+echo $JAVA_OPTS
+
 java $JAVA_OPTS -jar /usr/local/deployments/webapp-runner.jar --port $PORT --expanded-dir-name WEBJ --expand-war /webj/WebJ.war
 
 #Dont put anything here ...(after deployment)
