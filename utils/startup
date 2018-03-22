@@ -12,7 +12,7 @@ git clone https://github.com/webjframework/webj.git
 
 echo $JAVA_OPTS
 
-java  "-Xmx300m -Xss512k -Dfile.encoding=UTF-8"  -jar /usr/local/deployments/webapp-runner.jar --port $PORT --expanded-dir-name WEBJ --expand-war /webj/WebJ.war
+java  -Xmx300m -Xss512k -Dfile.encoding=UTF-8  -jar /usr/local/deployments/webapp-runner.jar --port $PORT --expanded-dir-name WEBJ --expand-war /webj/WebJ.war
 
 #Dont put anything here ...(after deployment)
 #P=$PORT
