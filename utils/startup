@@ -7,12 +7,14 @@ mkdir /target/tomcat.$PORT/webapps
 
 cp /usr/local/deployments/*.ini /target/tomcat.$PORT/webapps
 
-cd /
-git clone https://github.com/webjframework/webj.git
+#cd /
+#git clone https://github.com/webjframework/webj.git
+
+wget -c -N https://raw.githubusercontent.com/webjframework/webj/master/WebJ.war  -P /usr/local/deployments/
 
 echo $JAVA_OPTS
 
-java  -Xmx300m -Xss512k -Dfile.encoding=UTF-8  -jar /usr/local/deployments/webapp-runner.jar --port $PORT --expanded-dir-name WEBJ --expand-war /webj/WebJ.war
+java  -Xmx300m -Xss512k -Dfile.encoding=UTF-8  -jar /usr/local/deployments/webapp-runner.jar --port $PORT --expanded-dir-name WEBJ --expand-war /usr/local/deployments/WebJ.war
 
 #Dont put anything here ...(after deployment)
 #P=$PORT
