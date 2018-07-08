@@ -1,4 +1,4 @@
-# GENERAL Dont forget to set stach to Container for your app
+# GENERAL Dont forget to set stack to Container for your app
 use this Git or fork it ...
 
 upload new war and restart dyno (not build)
